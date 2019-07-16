@@ -7,13 +7,15 @@ import { LoginComponent } from './login/login.component';
 import {FormsModule} from '@angular/forms';
 import { HoursListComponent } from './hours-list/hours-list.component';
 import { MenuComponent } from './menu/menu.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HoursListComponent,
-    MenuComponent
+    MenuComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
