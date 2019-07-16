@@ -1,4 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Time} from '@angular/common';
+
+export class TimeRecord {
+  constructor(
+    public id: number,
+    public task: string,
+    public project: string,
+    public date: Date,
+    public time: Time,
+    public startTime: Time,
+    public endTime: Time
+  ) {
+
+  }
+}
 
 @Component({
   selector: 'app-hours-list',
@@ -7,7 +22,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HoursListComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
