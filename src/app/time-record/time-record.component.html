@@ -1,13 +1,20 @@
 <h1>Log time</h1>
 
 <div class="container">
-  <label>Task name</label>
-  <input type="text" name="task" required="required" [(ngModel)]="record.task">
+  <form (ngSubmit)="saveTimeRecord()">
+    <fieldset class="form-group">
+      Task: <input type="text" name="task" required="required" [(ngModel)]="record.task">
+    </fieldset>
 
-  <label>Start time</label>
-  <input type="text" name="task" required="required" [(ngModel)]="record.startTime">
+    <fieldset class="form-group">
+      Start: <input type="text" name="task" required="required" [(ngModel)]="record.startTime">
+    </fieldset>
 
-  <label>Spent time</label>
-  <input type="text" name="task" required="required" [(ngModel)]="record.time">
+    <fieldset class="form-group">
+      Duration: <input type="text" name="task" required="required" [(ngModel)]="record.time">
+    </fieldset>
+
+    <button type="submit" class="btn btn-success">Save</button>
+  </form>
 
 </div>
