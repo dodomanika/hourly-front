@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {TimeRecordDataService} from '../service/data/time-record-data.service';
+import {Router} from '@angular/router';
 
 export class TimeRecord {
   constructor(
@@ -21,6 +22,7 @@ export class TimeRecord {
 export class HoursListComponent implements OnInit {
 
   timeRecords: TimeRecord[];
+
   /* =
     [
       new TimeRecord(1, 'Reservations Functionnality', new Date(), new Date(), new Date())
@@ -28,7 +30,8 @@ export class HoursListComponent implements OnInit {
   ;*/
 
   constructor(
-    private timeRecordService: TimeRecordDataService
+    private timeRecordService: TimeRecordDataService,
+    private route: Router
   ) {
   }
 
@@ -52,6 +55,10 @@ export class HoursListComponent implements OnInit {
         this.refreshTimeRecords();
       }
     );
+  }
+
+  addTimeRecord() {
+    this.route.navigate(['record']);
   }
 
 }
