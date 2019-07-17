@@ -5,7 +5,6 @@ export class TimeRecord {
   constructor(
     public id: number,
     public task: string,
-    public project: string,
     public date: Date,
     public time: Time,
     public startTime: Time,
@@ -21,6 +20,8 @@ export class TimeRecord {
   styleUrls: ['./hours-list.component.css']
 })
 export class HoursListComponent implements OnInit {
+
+  timeRecords: TimeRecord[];
 
   constructor() {
   }
