@@ -15,7 +15,8 @@ export class TimeRecordComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private timeRecordService: TimeRecordDataService
+    private timeRecordService: TimeRecordDataService,
+    private router: Router
   ) {
   }
 
@@ -39,6 +40,13 @@ export class TimeRecordComponent implements OnInit {
       this.timeRecordService.postTimeRecord('domi', 0, this.record).subscribe(
         data => {
           console.log(data);
+        }
+      );
+    } else {
+      this.timeRecordService.putTimeRecord('domi', 0, this.id, this.record).subscribe(
+        data => {
+          console.log('update' + data);
+          this.router.navigate(['hours']);
         }
       );
     }

@@ -27,4 +27,9 @@ export class TimeRecordDataService {
   postTimeRecord(username, date, timeRecord) {
     return this.http.post(`http://localhost:8080/users/${username}/dates/${date}/records`, timeRecord);
   }
+
+  putTimeRecord(username, date, id, timeRecord) {
+    return this.http.put(`http://localhost:8080/users/${username}/dates/${date}/records/${id}`, timeRecord);
+
+  }
 }
