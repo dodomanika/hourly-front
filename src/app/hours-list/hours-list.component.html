@@ -17,6 +17,9 @@
       <td>{{timeRecord.task}}</td>
       <td>{{timeRecord.time | date:'HH:mm'}}</td>
       <td>
+        <button class="btn btn-success" (click)="updateTimeRecord(timeRecord.id)">Update</button>
+      </td>
+      <td>
         <button class="btn btn-warning" (click)="deleteTimeRecord(timeRecord.id)">Delete</button>
       </td>
     </tr>
