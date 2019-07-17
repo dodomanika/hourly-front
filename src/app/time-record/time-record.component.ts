@@ -22,7 +22,7 @@ export class TimeRecordComponent implements OnInit {
   ngOnInit() {
     this.id = this.route.snapshot.params['id'];
 
-    this.record = new TimeRecord(this.id, '', new Date(), new Date(), new Date());
+    this.record = new TimeRecord(this.id, '', new Date(), null, null);
 
     this.timeRecordService.retrieveTimeRecord('domi', 0, this.id).subscribe(
       result => {
@@ -32,6 +32,16 @@ export class TimeRecordComponent implements OnInit {
         console.log(result);
       }
     );
+  }
+
+  saveTimeRecord() {
+    if (this.id === -1) {
+      this.timeRecordService.postTimeRecord('domi', 0, this.record).subscribe(
+        data => {
+          console.log(data);
+        }
+      );
+    }
   }
 
 }
