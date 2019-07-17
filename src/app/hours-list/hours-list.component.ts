@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {TimeRecordDataService} from '../service/data/time-record-data.service';
 
 export class TimeRecord {
   constructor(
@@ -19,16 +20,29 @@ export class TimeRecord {
 })
 export class HoursListComponent implements OnInit {
 
-  timeRecords: TimeRecord[] =
+  timeRecords: TimeRecord[];
+  /* =
     [
       new TimeRecord(1, 'Reservations Functionnality', new Date(), new Date(), new Date())
     ]
-  ;
+  ;*/
 
-  constructor() {
+  constructor(
+    private timeRecordService: TimeRecordDataService
+  ) {
   }
 
   ngOnInit() {
+    this.refreshTimeRecords();
+  }
+
+  refreshTimeRecords() {
+    this.timeRecordService.retrieveAllTimeRecords('domi', 0).subscribe(
+      response => {
+        console.log(response);
+        this.timeRecords = response;
+      }
+    );
   }
 
 }
