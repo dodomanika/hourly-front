@@ -40,6 +40,7 @@ export class TimeRecordComponent implements OnInit {
       this.timeRecordService.postTimeRecord('domi', 0, this.record).subscribe(
         data => {
           console.log(data);
+          this.router.navigate(['hours']);
         }
       );
     } else {
