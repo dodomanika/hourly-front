@@ -3,12 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 import {LoginComponent} from './login/login.component';
 import {HoursListComponent} from './hours-list/hours-list.component';
 import {LogoutComponent} from './logout/logout.component';
+import {TimeRecordComponent} from './time-record/time-record.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'login', component: LoginComponent},
   {path: 'hours', component: HoursListComponent},
-  {path: 'logout', component: LogoutComponent}
+  {path: 'logout', component: LogoutComponent},
+  {path: 'record', component: TimeRecordComponent}
 ];
 
 @NgModule({
