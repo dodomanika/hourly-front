@@ -10,12 +10,11 @@
       <th>Delete</th>-->
     </tr>
     </thead>
-    <!--<tbody>
-    <tr *ngFor="let todo of todos">
-      <td>{{todo.description}}</td>
-      <td>{{todo.targetDate | date}}</td>
-      <td>{{todo.done}}</td>
+    <tbody>
+    <tr *ngFor="let timeRecord of timeRecords">
+      <td>{{timeRecord.task}}</td>
+      <td>{{timeRecord.time | date:'HH:mm'}}</td>
     </tr>
-    </tbody>-->
+    </tbody>
   </table>
 </div>
