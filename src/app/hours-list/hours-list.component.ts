@@ -45,4 +45,13 @@ export class HoursListComponent implements OnInit {
     );
   }
 
+  deleteTimeRecord(id) {
+    this.timeRecordService.deleteTimeRecord('domi', 0, id).subscribe(
+      response => {
+        console.log(response);
+        this.refreshTimeRecords();
+      }
+    );
+  }
+
 }

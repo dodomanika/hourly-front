@@ -13,6 +13,10 @@ export class TimeRecordDataService {
   }
 
   retrieveAllTimeRecords(username, date) {
-    return this.http.get<TimeRecord[]>(`http://localhost:8080/users/${username}/dates/${date}`);
+    return this.http.get<TimeRecord[]>(`http://localhost:8080/users/${username}/dates/${date}/records`);
+  }
+
+  deleteTimeRecord(username, date, id) {
+    return this.http.delete(`http://localhost:8080/users/${username}/dates/${date}/records/${id}`);
   }
 }
