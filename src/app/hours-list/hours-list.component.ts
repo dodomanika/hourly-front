@@ -58,7 +58,7 @@ export class HoursListComponent implements OnInit {
   }
 
   addTimeRecord() {
-    this.route.navigate(['record']);
+    this.route.navigate(['hours', -1]);
   }
 
 }
