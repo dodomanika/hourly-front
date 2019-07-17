@@ -7,11 +7,11 @@
     </fieldset>
 
     <fieldset class="form-group">
-      Start: <input type="text" name="task" required="required" [(ngModel)]="record.startTime">
+      Start: <input type="date" name="startTime" required="required" [(ngModel)]="record.startTime">
     </fieldset>
 
     <fieldset class="form-group">
-      Duration: <input type="text" name="task" required="required" [(ngModel)]="record.time">
+      Duration: <input type="date" name="time" required="required" [(ngModel)]="record.time">
     </fieldset>
 
     <button type="submit" class="btn btn-success">Save</button>
