@@ -61,4 +61,11 @@ export class HoursListComponent implements OnInit {
     this.route.navigate(['hours', -1]);
   }
 
+  updateTimeRecord(id) {
+    console.log(`update todo ${id}`);
+
+    this.route.navigate(['hours', id]);
+
+  }
+
 }
