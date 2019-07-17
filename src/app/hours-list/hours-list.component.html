@@ -7,6 +7,7 @@
     <tr>
       <th>Task</th>
       <th>Time</th>
+      <th></th>
       <!--<th>Update</th>
       <th>Delete</th>-->
     </tr>
@@ -15,6 +16,9 @@
     <tr *ngFor="let timeRecord of timeRecords">
       <td>{{timeRecord.task}}</td>
       <td>{{timeRecord.time | date:'HH:mm'}}</td>
+      <td>
+        <button class="btn btn-warning" (click)="deleteTimeRecord()">Delete</button>
+      </td>
     </tr>
     </tbody>
   </table>
