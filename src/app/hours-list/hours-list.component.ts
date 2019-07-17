@@ -1,14 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {Time} from '@angular/common';
 
 export class TimeRecord {
   constructor(
     public id: number,
     public task: string,
     public date: Date,
-    public time: Time,
-    public startTime: Time,
-    public endTime: Time
+    public startTime: Date,
+    public time: Date
   ) {
 
   }
@@ -21,7 +19,11 @@ export class TimeRecord {
 })
 export class HoursListComponent implements OnInit {
 
-  timeRecords: TimeRecord[];
+  timeRecords: TimeRecord[] =
+    [
+      new TimeRecord(1, 'Reservations Functionnality', new Date(), new Date(), new Date())
+    ]
+  ;
 
   constructor() {
   }
