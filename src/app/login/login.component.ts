@@ -20,6 +20,6 @@ export class LoginComponent implements OnInit {
 
   handleLogin() {
     console.log('login');
-    this.router.navigate(['hours']);
+    this.router.navigate(['hours', 0]);
   }
 }

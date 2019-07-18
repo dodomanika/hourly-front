@@ -8,9 +8,9 @@ import {TimeRecordComponent} from './time-record/time-record.component';
 const routes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'hours', component: HoursListComponent},
+  {path: 'hours/:dateIndex', component: HoursListComponent},
   {path: 'logout', component: LogoutComponent},
-  {path: 'hours/:id', component: TimeRecordComponent}
+  {path: 'hours/:dateIndex/:id', component: TimeRecordComponent}
 ];
 
 @NgModule({

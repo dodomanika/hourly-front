@@ -13,6 +13,9 @@ export class TimeRecordComponent implements OnInit {
   record: TimeRecord;
   id: number;
 
+  dateIndex: number;
+
+
   constructor(
     private route: ActivatedRoute,
     private timeRecordService: TimeRecordDataService,
@@ -22,10 +25,10 @@ export class TimeRecordComponent implements OnInit {
 
   ngOnInit() {
     this.id = this.route.snapshot.params['id'];
-
+    this.dateIndex = this.route.snapshot.params['dateIndex'];
     this.record = new TimeRecord(this.id, '', new Date(), null, null);
 
-    this.timeRecordService.retrieveTimeRecord('domi', 0, this.id).subscribe(
+    this.timeRecordService.retrieveTimeRecord('domi', this.dateIndex, this.id).subscribe(
       result => {
         if (result != null) {
           this.record = result;
@@ -37,17 +40,17 @@ export class TimeRecordComponent implements OnInit {
 
   saveTimeRecord() {
     if (this.id === -1) {
-      this.timeRecordService.postTimeRecord('domi', 0, this.record).subscribe(
+      this.timeRecordService.postTimeRecord('domi', this.dateIndex, this.record).subscribe(
         data => {
           console.log(data);
-          this.router.navigate(['hours']);
+          this.router.navigate(['hours', this.dateIndex]);
         }
       );
     } else {
-      this.timeRecordService.putTimeRecord('domi', 0, this.id, this.record).subscribe(
+      this.timeRecordService.putTimeRecord('domi', this.dateIndex, this.id, this.record).subscribe(
         data => {
           console.log('update' + data);
-          this.router.navigate(['hours']);
+          this.router.navigate(['hours', this.dateIndex]);
         }
       );
     }

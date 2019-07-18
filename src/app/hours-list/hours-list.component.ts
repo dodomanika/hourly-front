@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {TimeRecordDataService} from '../service/data/time-record-data.service';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 export class TimeRecord {
   constructor(
@@ -22,7 +22,9 @@ export class TimeRecord {
 export class HoursListComponent implements OnInit {
 
   timeRecords: TimeRecord[];
-  public date: Date = new Date();
+  date: Date = new Date();
+
+  dateIndex = 0;
 
   /* =
     [
@@ -32,16 +34,23 @@ export class HoursListComponent implements OnInit {
 
   constructor(
     private timeRecordService: TimeRecordDataService,
-    private route: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {
   }
 
   ngOnInit() {
+
     this.refreshTimeRecords();
+
+    this.route.params.subscribe(params => {
+      this.refreshTimeRecords();
+    });
+
   }
 
   refreshTimeRecords() {
-    this.timeRecordService.retrieveAllTimeRecords('domi', 0).subscribe(
+    this.timeRecordService.retrieveAllTimeRecords('domi', this.dateIndex).subscribe(
       response => {
         console.log(response);
         this.timeRecords = response;
@@ -50,7 +59,7 @@ export class HoursListComponent implements OnInit {
   }
 
   deleteTimeRecord(id) {
-    this.timeRecordService.deleteTimeRecord('domi', 0, id).subscribe(
+    this.timeRecordService.deleteTimeRecord('domi', this.dateIndex, id).subscribe(
       response => {
         console.log(response);
         this.refreshTimeRecords();
@@ -59,14 +68,26 @@ export class HoursListComponent implements OnInit {
   }
 
   addTimeRecord() {
-    this.route.navigate(['hours', -1]);
+    this.router.navigate(['hours', this.dateIndex, -1]);
   }
 
   updateTimeRecord(id) {
     console.log(`update todo ${id}`);
 
-    this.route.navigate(['hours', id]);
+    this.router.navigate(['hours', this.dateIndex, id]);
 
+  }
+
+  previous() {
+    this.dateIndex--;
+    console.log(this.dateIndex);
+    this.router.navigate(['hours', this.dateIndex]);
+  }
+
+  next() {
+    this.dateIndex++;
+    console.log(this.dateIndex);
+    this.router.navigate(['hours', this.dateIndex]);
   }
 
 }
