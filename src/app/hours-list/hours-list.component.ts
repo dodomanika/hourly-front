@@ -22,6 +22,7 @@ export class TimeRecord {
 export class HoursListComponent implements OnInit {
 
   timeRecords: TimeRecord[];
+  public date: Date = new Date();
 
   /* =
     [
