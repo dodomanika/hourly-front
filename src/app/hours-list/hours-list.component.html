@@ -6,16 +6,15 @@
     <thead>
     <tr>
       <th>Task</th>
-      <th>Time</th>
+      <th>Time [h]</th>
       <th></th>
-      <!--<th>Update</th>
-      <th>Delete</th>-->
+      <th></th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let timeRecord of timeRecords">
       <td>{{timeRecord.task}}</td>
-      <td>{{timeRecord.time | date:'HH:mm'}}</td>
+      <td>{{timeRecord.time}}</td>
       <td>
         <button class="btn btn-success" (click)="updateTimeRecord(timeRecord.id)">Update</button>
       </td>

@@ -8,7 +8,7 @@ export class TimeRecord {
     public task: string,
     public date: Date,
     public startTime: Date,
-    public time: Date
+    public time: number
   ) {
 
   }
