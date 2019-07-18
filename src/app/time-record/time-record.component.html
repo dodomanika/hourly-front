@@ -1,14 +1,16 @@
-<h1>Log time</h1>
 
 <div class="container">
+  <h1>Log time</h1>
+
   <form (ngSubmit)="saveTimeRecord()">
     <fieldset class="form-group">
       Task: <input type="text" name="task" required="required" [(ngModel)]="record.task">
     </fieldset>
 
     <fieldset class="form-group">
-      Start: <input type="time" name="startTime" required="required"
-                    [ngModel]="record.startTime | date:'HH:mm'" (ngModelChange)="$event">
+      Start: <input type="text" name="startTime" required="required"
+                    [ngModel]="record.startTime"
+                    (ngModelChange)="record.startTime = ($event)">
     </fieldset>
 
     <fieldset class="form-group">

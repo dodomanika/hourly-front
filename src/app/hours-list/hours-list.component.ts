@@ -7,7 +7,7 @@ export class TimeRecord {
     public id: number,
     public task: string,
     public date: Date,
-    public startTime: Date,
+    public startTime: string,
     public duration: number
   ) {
 
