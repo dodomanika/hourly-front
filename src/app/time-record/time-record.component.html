@@ -7,12 +7,12 @@
     </fieldset>
 
     <fieldset class="form-group">
-      Start: <input type="date" name="startTime" required="required"
-                    [ngModel]="record.startTime | date:'yyyy-MM-dd'" (ngModelChange)="$event">
+      Start: <input type="time" name="startTime" required="required"
+                    [ngModel]="record.startTime | date:'HH:mm'" (ngModelChange)="$event">
     </fieldset>
 
     <fieldset class="form-group">
-      Duration: <input type="number" name="time" required="required" [(ngModel)]="record.time">
+      Duration: <input type="number" name="time" required="required" [(ngModel)]="record.duration">
     </fieldset>
 
     <button type="submit" class="btn btn-success">Save</button>

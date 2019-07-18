@@ -14,7 +14,7 @@
     <tbody>
     <tr *ngFor="let timeRecord of timeRecords">
       <td>{{timeRecord.task}}</td>
-      <td>{{timeRecord.time}}</td>
+      <td>{{timeRecord.duration}}</td>
       <td>
         <button class="btn btn-success" (click)="updateTimeRecord(timeRecord.id)">Update</button>
       </td>
