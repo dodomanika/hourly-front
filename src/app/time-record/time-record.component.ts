@@ -26,7 +26,7 @@ export class TimeRecordComponent implements OnInit {
   ngOnInit() {
     this.id = this.route.snapshot.params['id'];
     this.dateIndex = this.route.snapshot.params['dateIndex'];
-    this.record = new TimeRecord(this.id, '', new Date(), null, null);
+    this.record = new TimeRecord(this.id, '', null, null);
 
     this.timeRecordService.retrieveTimeRecord('domi', this.dateIndex, this.id).subscribe(
       result => {

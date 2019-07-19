@@ -7,7 +7,6 @@ export class TimeRecord {
   constructor(
     public id: number,
     public task: string,
-    public date: Date,
     public startTime: string,
     public duration: number
   ) {
