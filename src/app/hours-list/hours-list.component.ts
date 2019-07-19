@@ -23,15 +23,9 @@ export class TimeRecord {
 export class HoursListComponent implements OnInit {
 
   timeRecords: TimeRecord[];
+
   date: moment.Moment;
-
   dateIndex: number;
-
-  /* =
-    [
-      new TimeRecord(1, 'Reservations Functionnality', new Date(), new Date(), new Date())
-    ]
-  ;*/
 
   constructor(
     private timeRecordService: TimeRecordDataService,
