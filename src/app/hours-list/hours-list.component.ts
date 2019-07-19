@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {TimeRecordDataService} from '../service/data/time-record-data.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import * as moment from 'moment';
 
 export class TimeRecord {
   constructor(
@@ -22,9 +23,9 @@ export class TimeRecord {
 export class HoursListComponent implements OnInit {
 
   timeRecords: TimeRecord[];
-  date: Date = new Date();
+  date: moment.Moment;
 
-  dateIndex = 0;
+  dateIndex: number;
 
   /* =
     [
@@ -40,16 +41,17 @@ export class HoursListComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.refreshTimeRecords();
 
     this.route.params.subscribe(params => {
       this.refreshTimeRecords();
     });
-
   }
 
   refreshTimeRecords() {
+    this.dateIndex = <number>this.route.snapshot.params['dateIndex'];
+    this.date = moment(new Date()).add(this.dateIndex, 'days');
+
     this.timeRecordService.retrieveAllTimeRecords('domi', this.dateIndex).subscribe(
       response => {
         console.log(response);

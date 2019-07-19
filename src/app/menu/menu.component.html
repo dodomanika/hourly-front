@@ -3,7 +3,7 @@
 
     <ul class="navbar-nav">
       <li><a class="nav-link">Hourly</a></li>
-      <li><a routerLink="/hours/0" class="nav-link">My Hours</a></li>
+      <li><a [routerLink]="['/hours/0']" [queryParams]="{dateIndex: 0}" class="nav-link">My Hours</a></li>
     </ul>
 
     <ul class="navbar-nav navbar-collapse justify-content-end">
