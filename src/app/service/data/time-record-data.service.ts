@@ -13,14 +13,14 @@ export class TimeRecordDataService {
   }
 
   retrieveAllTimeRecords(username, date) {
-    const basicAuthHeaderString = this.createBasicHttpHeader();
+    /*const basicAuthHeaderString = this.createBasicHttpHeader();
 
     const headers = new HttpHeaders({
       Authorization: basicAuthHeaderString
-    });
+    });*/
 
     return this.http.get<TimeRecord[]>(`http://localhost:8080/users/${username}/dates/${date}/records`,
-      {headers});
+      /*{headers}*/);
   }
 
   deleteTimeRecord(username, date, id) {
