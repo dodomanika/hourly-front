@@ -29,6 +29,15 @@ export class BasicAuthenticationService {
       )
     );
   }
+
+  isUserLoggedIn() {
+    const user = sessionStorage.getItem('authenticatedUser');
+    return !(user === null);
+  }
+
+  logout() {
+    sessionStorage.removeItem('authenticatedUser');
+  }
 }
 
 export class AuthenticationBean {
