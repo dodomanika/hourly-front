@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   username = 'domi';
   password = '';
   invalidLogin = false;
+  errorMessage = 'Invalid Credentials'
 
   constructor(
     private router: Router,
