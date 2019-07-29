@@ -29,15 +29,6 @@ export class BasicAuthenticationService {
       )
     );
   }
-
-  createBasicAuthorizationString() {
-    const username = 'domi';
-    const password = 'dummy';
-
-    const basicAuthHeaderString = 'Basic ' + window.btoa(username + ':' + password);
-
-    return basicAuthHeaderString;
-  }
 }
 
 export class AuthenticationBean {

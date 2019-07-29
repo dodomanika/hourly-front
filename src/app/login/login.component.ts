@@ -23,11 +23,6 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  handleLogin() {
-    console.log('login');
-    this.router.navigate(['hours', 0]);
-  }
-
   handleBasicAuthLogin() {
     this.basicAuthenticationService.executeAuthenticationService(this.username, this.password)
       .subscribe(
