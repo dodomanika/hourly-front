@@ -24,10 +24,21 @@ export class BasicAuthenticationService {
       map(
         data => {
           sessionStorage.setItem('authenticatedUser', username);
+          sessionStorage.setItem('token', basicAuthHeaderString);
           return data;
         }
       )
     );
+  }
+
+  getAuthenticatedUser() {
+    return sessionStorage.getItem('authenticatedUser');
+  }
+
+  getAuthenticatedToken() {
+    if (this.getAuthenticatedUser()) {
+      return sessionStorage.getItem('token');
+    }
   }
 
   isUserLoggedIn() {
@@ -37,6 +48,7 @@ export class BasicAuthenticationService {
 
   logout() {
     sessionStorage.removeItem('authenticatedUser');
+    sessionStorage.removeItem('token');
   }
 }
 
