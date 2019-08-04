@@ -1,23 +1,34 @@
+<div id="log-time">
+  <h1 class="text-center pt-5">Log time</h1>
 
-<div class="container">
-  <h1>Log time</h1>
+  <div id="login-row" class="row justify-content-center align-items-center">
+    <div id="login-column" class="col-md-6">
+      <div id="login-box" class="col-md-12">
 
-  <form (ngSubmit)="saveTimeRecord()">
-    <fieldset class="form-group">
-      Task: <input type="text" name="task" required="required" [(ngModel)]="record.task">
-    </fieldset>
+        <form (ngSubmit)="saveTimeRecord()">
 
-    <fieldset class="form-group">
-      Start: <input type="text" name="startTime" required="required"
-                    [ngModel]="record.startTime"
-                    (ngModelChange)="record.startTime = ($event)">
-    </fieldset>
+          <fieldset class="form-group">
+            <label for="task" class="text-info">Task:</label><br>
+            <input type="text" name="task" required="required" [(ngModel)]="record.task" id="task" class="form-control">
+          </fieldset>
 
-    <fieldset class="form-group">
-      Duration: <input type="number" name="time" required="required" [(ngModel)]="record.duration">
-    </fieldset>
+          <fieldset class="form-group">
+            <label for="startTime" class="text-info">Start:</label><br>
+            <input type="text" name="startTime" required="required"
+                   [ngModel]="record.startTime"
+                   (ngModelChange)="record.startTime = ($event)"
+                   id="startTime" class="form-control">
+          </fieldset>
 
-    <button type="submit" class="btn btn-success">Save</button>
-  </form>
+          <fieldset class="form-group">
+            <label for="time" class="text-info">Task:</label><br>
+            <input type="number" name="time" required="required" [(ngModel)]="record.duration" id="time" class="form-control">
+          </fieldset>
 
+          <button type="submit" class="btn btn-success">Save</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
