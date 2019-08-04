@@ -1,34 +1,40 @@
 <div class="container">
-  <h1>{{date | date:'EEEE, d MMMM yyyy'}}</h1>
+  <h1 class="text-center pt-5">{{date | date:'EEEE, d MMMM yyyy'}}</h1>
 
-  <table class="table">
-    <thead>
-    <tr>
-      <th>Task</th>
-      <th>Time [h]</th>
-      <th></th>
-      <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let timeRecord of timeRecords">
-      <td>{{timeRecord.task}}</td>
-      <td>{{timeRecord.duration}}</td>
-      <td>
-        <button class="btn btn-success" (click)="updateTimeRecord(timeRecord.id)">Update</button>
-      </td>
-      <td>
-        <button class="btn btn-warning" (click)="deleteTimeRecord(timeRecord.id)">Delete</button>
-      </td>
-    </tr>
-    </tbody>
-  </table>
-  <div class="wrapper">
-    <button class="btn btn-success" (click)="addTimeRecord()">Add</button>
+  <div id="login-row" class="row justify-content-center align-items-center">
+    <div id="login-column" class="col">
+      <div id="login-box" class="col">
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Task</th>
+            <th>Time [h]</th>
+            <th></th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let timeRecord of timeRecords">
+            <td>{{timeRecord.task}}</td>
+            <td>{{timeRecord.duration}}</td>
+            <td>
+              <button class="btn btn-success" (click)="updateTimeRecord(timeRecord.id)">Update</button>
+            </td>
+            <td>
+              <button class="btn btn-warning" (click)="deleteTimeRecord(timeRecord.id)">Delete</button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        <div class="wrapper">
+          <button class="btn btn-success" (click)="addTimeRecord()">Add</button>
 
-    <div class="btn-group">
-      <button type="button" class="btn btn-secondary" (click)="previous()">Previous</button>
-      <button type="button" class="btn btn-secondary" (click)="next()">Next</button>
+          <div class="btn-group">
+            <button type="button" class="btn btn-secondary" (click)="previous()">Previous</button>
+            <button type="button" class="btn btn-secondary" (click)="next()">Next</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
