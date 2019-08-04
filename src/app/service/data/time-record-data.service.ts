@@ -42,7 +42,7 @@ export class TimeRecordDataService {
   }
 
   createBasicHttpHeader() {
-    const username = 'domi';
+    const username = 'in28minutes';
     const password = 'dummy';
     const basicAuthHeaderString = 'Basic ' + window.btoa(username + ':' + password);
     return basicAuthHeaderString;

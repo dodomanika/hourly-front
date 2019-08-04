@@ -45,7 +45,7 @@ export class HoursListComponent implements OnInit {
     this.dateIndex = <number>this.route.snapshot.params['dateIndex'];
     this.date = moment(new Date()).add(this.dateIndex, 'days');
 
-    this.timeRecordService.retrieveAllTimeRecords('domi', this.dateIndex).subscribe(
+    this.timeRecordService.retrieveAllTimeRecords('in28minutes', this.dateIndex).subscribe(
       response => {
         console.log(response);
         this.timeRecords = response;
@@ -54,7 +54,7 @@ export class HoursListComponent implements OnInit {
   }
 
   deleteTimeRecord(id) {
-    this.timeRecordService.deleteTimeRecord('domi', this.dateIndex, id).subscribe(
+    this.timeRecordService.deleteTimeRecord('in28minutes', this.dateIndex, id).subscribe(
       response => {
         console.log(response);
         this.refreshTimeRecords();
