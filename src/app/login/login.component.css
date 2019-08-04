@@ -1,18 +1,3 @@
-/*
-.center {
-  margin: auto;
-  width: 50%;
-  padding: 10px;
-}
-*/
-
-
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #17a2b8;
-  height: 100vh;
-}
 #login .container #login-row #login-column #login-box {
   margin-top: 20px;
   max-width: 600px;
