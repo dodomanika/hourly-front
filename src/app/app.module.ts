@@ -12,6 +12,7 @@ import { LogoutComponent } from './logout/logout.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { TimeRecordComponent } from './time-record/time-record.component';
 import {HttpInterceptorBasicAuthService} from './service/http/http-interceptor-basic-auth.service';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import {HttpInterceptorBasicAuthService} from './service/http/http-interceptor-b
     MenuComponent,
     FooterComponent,
     LogoutComponent,
-    TimeRecordComponent
+    TimeRecordComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
