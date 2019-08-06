@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {TaskDataService} from '../service/data/task-data.service';
+import {Router} from '@angular/router';
 
 export class Task {
   constructor(
@@ -18,10 +20,41 @@ export class TaskManageComponent implements OnInit {
 
   tasks: Task[];
 
-  constructor() {
+  constructor(
+    private taskService: TaskDataService,
+    private router: Router
+  ) {
   }
 
   ngOnInit() {
+    this.refreshTasks();
+  }
+
+  refreshTasks() {
+    this.taskService.retrieveTasks().subscribe(
+      response => {
+        console.log(response);
+        this.tasks = response;
+      }
+    );
+  }
+
+  deleteTask(id) {
+    this.taskService.deleteTask(id).subscribe(
+      response => {
+        console.log(response);
+        this.refreshTasks();
+      }
+    );
+  }
+
+  addTask() {
+    this.router.navigate(['tasks', -1]);
+  }
+
+  updateTask(id) {
+    this.router.navigate(['tasks', id]);
+
   }
 
 }
