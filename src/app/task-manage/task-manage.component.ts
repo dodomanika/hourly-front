@@ -1,4 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+
+export class Task {
+  constructor(
+    public id: number,
+    public name: string,
+    public description: string
+  ) {
+  }
+}
 
 @Component({
   selector: 'app-task-manage',
@@ -7,7 +16,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskManageComponent implements OnInit {
 
-  constructor() { }
+  tasks: Task[];
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
