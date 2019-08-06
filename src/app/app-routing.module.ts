@@ -6,6 +6,7 @@ import {LogoutComponent} from './logout/logout.component';
 import {TimeRecordComponent} from './time-record/time-record.component';
 import {RouteGuardService} from './service/route-guard.service';
 import {RegisterComponent} from './register/register.component';
+import {TaskManageComponent} from './task-manage/task-manage.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'hours/:dateIndex', component: HoursListComponent, canActivate: [RouteGuardService]},
   {path: 'logout', component: LogoutComponent, canActivate: [RouteGuardService]},
-  {path: 'hours/:dateIndex/:id', component: TimeRecordComponent, canActivate: [RouteGuardService]}
+  {path: 'hours/:dateIndex/:id', component: TimeRecordComponent, canActivate: [RouteGuardService]},
+  {path: 'tasks', component: TaskManageComponent, canActivate: [RouteGuardService]}
 ];
 
 @NgModule({
