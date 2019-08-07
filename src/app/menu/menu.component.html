@@ -4,6 +4,7 @@
     <ul class="navbar-nav">
       <li><a class="nav-link">Hourly</a></li>
       <li><a *ngIf="basicAuthenticationService.isUserLoggedIn()" [routerLink]="['/hours/0']" [queryParams]="{dateIndex: 0}" class="nav-link">My Hours</a></li>
+      <li><a *ngIf="basicAuthenticationService.isUserLoggedIn()" [routerLink]="['/tasks']" class="nav-link">My Tasks</a></li>
     </ul>
 
     <ul class="navbar-nav navbar-collapse justify-content-end">
