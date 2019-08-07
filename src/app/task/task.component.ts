@@ -35,7 +35,7 @@ export class TaskComponent implements OnInit {
   }
 
   saveTask() {
-    if (this.id === -1) {
+    if (this.isAddTask()) {
       this.taskService.postTask(this.task).subscribe(
         data => {
           console.log(data);
@@ -50,6 +50,10 @@ export class TaskComponent implements OnInit {
         }
       );
     }
+  }
+
+  isAddTask() {
+    return this.id.toString() === '-1';
   }
 
 }
