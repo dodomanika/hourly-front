@@ -15,6 +15,7 @@ import {HttpInterceptorBasicAuthService} from './service/http/http-interceptor-b
 import { RegisterComponent } from './register/register.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { TaskManageComponent } from './task-manage/task-manage.component';
+import { TaskComponent } from './task/task.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { TaskManageComponent } from './task-manage/task-manage.component';
     TimeRecordComponent,
     RegisterComponent,
     WelcomeComponent,
-    TaskManageComponent
+    TaskManageComponent,
+    TaskComponent
   ],
   imports: [
     BrowserModule,
