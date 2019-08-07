@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {TimeRecord} from '../hours-list/hours-list.component';
+import {Task} from '../task-manage/task-manage.component';
+import {ActivatedRoute} from '@angular/router';
+import {TaskDataService} from '../service/data/task-data.service';
 
 @Component({
   selector: 'app-task',
@@ -7,9 +11,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskComponent implements OnInit {
 
-  constructor() { }
+  task: Task;
+  id: number;
+
+  constructor(
+    private route: ActivatedRoute,
+    private taskService: TaskDataService
+  ) {
+  }
 
   ngOnInit() {
+    this.id = this.route.snapshot.params['id'];
+    this.task = new Task(this.id, '', '');
+
+    this.taskService.retrieveTask(this.id).subscribe(
+      result => {
+        if (result != null) {
+          this.task = result;
+        }
+        console.log(result);
+      }
+    );
   }
 
 }
