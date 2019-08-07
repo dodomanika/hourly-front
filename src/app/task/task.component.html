@@ -1,5 +1,6 @@
 <div id="log-time">
-  <h1 class="text-center pt-5">Add task</h1>
+  <h1 class="text-center pt-5" *ngIf="isAddTask()">Add task</h1>
+  <h1 class="text-center pt-5" *ngIf="!isAddTask()">Update task</h1>
 
   <div id="login-row" class="row justify-content-center align-items-center">
     <div id="login-column" class="col-md-6">
